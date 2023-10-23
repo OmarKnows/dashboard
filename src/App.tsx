@@ -1,9 +1,12 @@
-import TextInput from './shared/components/TextInput';
+import TextInput, { EInputTypes } from './shared/components/Input';
 
 function App() {
 	return (
 		<>
-			<TextInput />
+			<div className='text-center m-10'>
+				<TextInput placeholder='Enter your first name' />
+			</div>
+			<p>test</p>
 		</>
 	);
 }

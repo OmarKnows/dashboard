@@ -2,7 +2,16 @@
 export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
-		extend: {},
+		colors: {
+			white: '#ffffff',
+			stoke: '#E2E8F0',
+			gray: '#64748B',
+		},
+		extend: {
+			fontFamily: {
+				custom: ['Satoshi', 'sans'],
+			},
+		},
 	},
 	plugins: [],
 };
