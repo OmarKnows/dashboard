@@ -6,6 +6,7 @@ export default {
 			white: '#ffffff',
 			stoke: '#E2E8F0',
 			gray: '#64748B',
+			disabled: '#EFF4FB',
 		},
 		extend: {
 			fontFamily: {

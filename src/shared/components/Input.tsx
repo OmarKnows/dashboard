@@ -13,7 +13,7 @@ const Input: React.FC<IInputProps> = ({ type = EInputTypes.text, disabled = fals
 	return (
 		<div>
 			<input
-				className='w-64 h-12 border-solid border-2 rounded bg-white border-stoke py-3 ps-5 placeholder:text-sm text-gray text-sm'
+				className='w-full h-full border-solid border-2 rounded bg-white border-stoke py-3 ps-5 placeholder:text-sm text-gray text-sm disabled:bg-disabled'
 				type={type}
 				disabled={disabled}
 				placeholder={placeholder}
