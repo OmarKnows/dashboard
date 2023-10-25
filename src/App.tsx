@@ -1,12 +1,14 @@
-import TextInput, { EInputTypes } from './shared/components/Input';
+import { Input } from '@/components/ui/input';
+import Card from './shared/components/Card';
 
 function App() {
 	return (
 		<>
-			<div className='text-center m-10 w-9 h-9'>
-				<TextInput placeholder='Enter your first name' />
+			<div className='w-96'>
+				<Card title='omar'>
+					<Input type='email' placeholder='Email' />
+				</Card>
 			</div>
-			<p>test</p>
 		</>
 	);
 }
