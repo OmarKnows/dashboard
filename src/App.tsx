@@ -2,6 +2,7 @@ import { Input } from '@/components/ui/input';
 import Card from './shared/components/Card';
 import { Switch } from './components/ui/switch';
 import { DatePicker } from './shared/components/DatePicker';
+import { Checkbox } from './components/ui/checkbox';
 
 function App() {
 	return (
@@ -22,6 +23,11 @@ function App() {
 
 				<Card title='Date Picker'>
 					<DatePicker />
+				</Card>
+
+				<Card title='Check Boxes'>
+					<Checkbox />
+					<Checkbox rounded />
 				</Card>
 			</div>
 		</>
