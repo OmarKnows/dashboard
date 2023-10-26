@@ -20,8 +20,11 @@ export const theme = {
 			white: '#ffffff',
 			disabled: '#EFF4FB',
 			border: '#E2E8F0',
+			lightgray: '#E5E7EB',
 			gray: '#64748B',
 			dark: '#1C2434',
+			debug: '#ff0000',
+			primary: '#3056D3',
 		},
 		keyframes: {
 			'accordion-down': {

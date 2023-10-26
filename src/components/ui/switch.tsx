@@ -1,27 +1,50 @@
-import * as React from "react"
-import * as SwitchPrimitives from "@radix-ui/react-switch"
+import * as React from 'react';
+import * as SwitchPrimitives from '@radix-ui/react-switch';
 
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils';
+import { MdCheck, MdClose } from 'react-icons/md';
 
 const Switch = React.forwardRef<
-  React.ElementRef<typeof SwitchPrimitives.Root>,
-  React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
->(({ className, ...props }, ref) => (
-  <SwitchPrimitives.Root
-    className={cn(
-      "peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input",
-      className
-    )}
-    {...props}
-    ref={ref}
-  >
-    <SwitchPrimitives.Thumb
-      className={cn(
-        "pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0"
-      )}
-    />
-  </SwitchPrimitives.Root>
-))
-Switch.displayName = SwitchPrimitives.Root.displayName
+	React.ElementRef<typeof SwitchPrimitives.Root>,
+	React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> & {
+		variant?: 'md' | 'lg';
+		icon?: boolean;
+	}
+>(({ className, variant, icon, checked, ...props }, ref) => (
+	<SwitchPrimitives.Root
+		className={cn(
+			'peer inline-flex w-[44px] shrink-0 grow-0 cursor-pointer items-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 bg-lightgray',
+			{
+				'h-3': variant === 'md',
+				'h-5': variant === 'lg',
+			},
+			className
+		)}
+		{...props}
+		ref={ref}
+	>
+		<SwitchPrimitives.Thumb
+			className={cn(
+				'pointer-events-none block h-5 w-5 rounded-full data-[state=unchecked]:bg-white shadow-lg ring-0 transition-transform data-[state=checked]:bg-primary data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0 mx-1',
+				{
+					'flex items-center justify-center': icon,
+				}
+			)}
+		>
+			{icon &&
+				(checked ? (
+					<div>
+						<MdCheck size='0.7rem' color='white' />
+					</div>
+				) : (
+					<div>
+						<MdClose size='0.7rem' color='gray' />
+					</div>
+				))}
+		</SwitchPrimitives.Thumb>
+	</SwitchPrimitives.Root>
+));
 
-export { Switch }
+Switch.displayName = SwitchPrimitives.Root.displayName;
+
+export { Switch };

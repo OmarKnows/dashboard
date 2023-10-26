@@ -1,14 +1,27 @@
 import { Input } from '@/components/ui/input';
 import Card from './shared/components/Card';
 import { Switch } from './components/ui/switch';
+import { DatePicker } from './shared/components/DatePicker';
 
 function App() {
 	return (
 		<>
 			<div className='w-96'>
-				<Card title='omar'>
-					<Input type='email' placeholder='Email' />
-					<Switch />
+				<Card title='Input fields'>
+					<Input type='text' placeholder='Default Input Text' />
+					<Input type='file' className='my-3' />
+					<Input type='text' placeholder='Disabled Input Text' disabled />
+				</Card>
+
+				<Card title='Toggle Switch input'>
+					<Switch variant='md' />
+					<Switch variant='md' icon />
+					<Switch variant='lg' />
+					<Switch variant='lg' icon={true} />
+				</Card>
+
+				<Card title='Date Picker'>
+					<DatePicker />
 				</Card>
 			</div>
 		</>
