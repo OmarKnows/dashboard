@@ -4,6 +4,7 @@ import { Switch } from './components/ui/switch';
 import { DatePicker } from './shared/components/DatePicker';
 import { Checkbox } from './components/ui/checkbox';
 import { Textarea } from './components/ui/textarea';
+import SelectMenu from './shared/components/SelectMenu';
 
 function App() {
 	return (
@@ -33,6 +34,11 @@ function App() {
 			<Card title='Text area fields'>
 				<Textarea className='mb-3' />
 				<Textarea disabled />
+			</Card>
+
+			<Card title='Dropdown menu fields'>
+				<label>Select Country</label>
+				<SelectMenu />
 			</Card>
 		</div>
 	);
