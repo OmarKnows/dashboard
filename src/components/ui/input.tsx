@@ -9,7 +9,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, type,
 		<input
 			type={type}
 			className={cn(
-				'flex h-10 w-full border-solid border-2 rounded bg-white border-border py-3 ps-5 placeholder:text-sm text-gray text-sm disabled:bg-disabled',
+				{
+					'ps-3 py-3': type !== 'file',
+					'file:text-sm': type === 'file',
+				},
+				'flex h-10 w-full  file:bg-border file:h-full file:border-0 file:text-gray border-solid border-2 rounded bg-white border-border placeholder:text-sm text-gray text-sm disabled:bg-disabled',
 				className
 			)}
 			ref={ref}
