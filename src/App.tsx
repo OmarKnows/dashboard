@@ -11,7 +11,7 @@ function App() {
 		<div className='grid grid-cols-3 gap-4 p-3'>
 			<Card title='Input fields'>
 				<Input type='text' placeholder='Default Input Text' />
-				<Input type='file' className='my-3' />
+				<Input id='picture' type='file' />
 				<Input type='text' placeholder='Disabled Input Text' disabled />
 			</Card>
 
