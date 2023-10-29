@@ -4,9 +4,16 @@ import { Switch } from './components/ui/switch';
 import { DatePicker } from './shared/components/DatePicker';
 import { Checkbox } from './components/ui/checkbox';
 import { Textarea } from './components/ui/textarea';
-import SelectMenu from './shared/components/SelectMenu';
+import Select, { components } from 'react-select';
+import { TbWorld } from 'react-icons/tb';
 
 function App() {
+	const options = [
+		{ value: 'USA', label: 'United States' },
+		{ value: 'UAE', label: 'United Arab Emirates' },
+		{ value: 'UK', label: 'United Kingdom' },
+	];
+
 	return (
 		<div className='grid grid-cols-3 gap-4 p-3'>
 			<Card title='Input fields'>
@@ -38,7 +45,31 @@ function App() {
 
 			<Card title='Dropdown menu fields'>
 				<label>Select Country</label>
-				<SelectMenu />
+				<Select
+					components={{
+						Control: ({ children, ...rest }) => (
+							<components.Control {...rest} className='ps-3'>
+								{!rest.isMulti && <TbWorld color='gray' />}
+								{children}
+							</components.Control>
+						),
+						IndicatorSeparator: null,
+					}}
+					options={options}
+					isMulti
+				/>
+				<Select
+					components={{
+						Control: ({ children, ...rest }) => (
+							<components.Control {...rest} className='ps-3'>
+								{!rest.isMulti && <TbWorld color='gray' />}
+								{children}
+							</components.Control>
+						),
+						IndicatorSeparator: null,
+					}}
+					options={options}
+				/>
 			</Card>
 		</div>
 	);
